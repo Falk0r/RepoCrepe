@@ -1,0 +1,13 @@
+<h1>Le raccourcisseur d'URLs spécial crêpes bretonnes !</h1>
+<br>
+<a href="{% url 'raccourcir' %}">Raccourcir une URL</a>
+
+<p>Liste des URLs raccourcies :</p>
+
+<ul>
+
+  {% for url in url_raccourcies  %}
+  <li>{{ url.urlLongue }} via <a href="{% url 'redirection' code=url.code %}">localhost:8000/mini_url/m/{{ url.code}}</a> ({{url.nbAcces}} accès)</li>
+  {% endfor %}
+
+</ul>

@@ -1,0 +1,9 @@
+{% if envoi %}Votre lien a bien été raccourcie !{% endif %}
+
+<form action="{% url 'raccourcir' %}" method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit"  value="Submit">
+</form>
+
+<a href="{% url 'accueil' %}">Revenir à l'accueil</a>
